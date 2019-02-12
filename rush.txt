@@ -1,0 +1,9 @@
+
+
+
+	1. Which one of the following is self referential integrity
+
+		a. emp<->dept
+		b. customer<->emp
+		c. product<->item
+		d. none of the above

@@ -1,0 +1,57 @@
+
+
+1.  ANNONYMOUS block
+2.  declarations
+3.  data dictionaries
+4.  data types ...record types, rowtypes...types
+5.  cursor
+6.  procedure
+7.  functions
+8.  triggers
+9.  exception handling
+10. packages
+
+System.out.println("hello");
+
+class Cage
+{
+	static Lion lionKing = new Lion();
+}
+
+class Lion
+{
+	roar()
+	{
+
+	}
+}
+
+	Cage.lionKing.roar();
+
+
+
+
+
+dbms_output.put_line('hello');
+jungle.roam('roaming...');
+mybank.calcSi(10000,3,8.5);
+mygraphics.drawcircle
+
+
+CREATE  OR REPLACE  PACKAGE  mybank IS
+	procedure calcSi(p number, n number, r number);
+END  
+
+CREATE  OR  REPLACE  PACKAGE  BODY  mybank
+IS 
+	procedure calcSi(p number, n number, r number)
+	as
+	  si number;
+	begin
+		si:=(p*n*r)/100;
+		dbms_output.put_line('simple interest :' || si);
+	end calcSi;
+end mybank;
+
+
+

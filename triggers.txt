@@ -1,0 +1,73 @@
+
+create table dept
+(
+  x
+  y
+  z
+)
+
+create table emp
+(
+a 
+b 
+
+)
+
+trigger..  
+	a with z
+
+insert into emp .... 
+
+
+create or replace trigger chk_time
+before insert or update or delete
+on emp for each row
+begin
+   dbms_output.put_line('Hi from tigger..chk_time');
+  IF  (TO_CHAR(sysdate,'DY') IN  ('MON','TUE')) 
+      OR (TO_CHAR(sysdate,'HH24')  NOT BETWEEN  '08' AND '18')
+   then
+      raise_application_error(-20400,'You cannot perform any DML operation');
+   end if;
+
+end;
+/
+
+IF  (TO_CHAR(sysdate,'DY')  IN  ('SAT','SUN')) OR (TO_CHAR(sysdate,'HH24')  NOT  
+           BETWEEN  '08' AND '18')
+		THEN
+
+
+
+CREATE TABLE emp_hist
+( 
+ empno NUMBER(5),
+ oldSal NUMBER(10),
+ newSal NUMBER(10), 
+ who varchar2(10), 
+ when sysdate
+);
+
+CREATE OR REPLACE TRIGGER  LOG_TRIG
+AFTER UPDATE OF sal ON emp
+FOR EACH ROW
+BEGIN
+ IF :NEW.sal < :OLD.sal THEN
+	            RAISE_APPLICATION_ERROR(-20101,'Salary cannot be  decremented');
+    ELSE
+   	INSERT INTO emp_hist VALUES
+		(:OLD.empno, :OLD.sal, :NEW.sal, user, sysdate);
+   END IF;
+END;
+
+
+
+
+
+
+
+
+
+
+
+

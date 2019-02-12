@@ -1,0 +1,236 @@
+/*
+
+			1			2
+		unmanifested			manifested
+		|				|
+		invisible			visible
+		|				|
+		Thought + Emotion    Time	Action Result
+		------>	---->		-->	-->	-->
+		frequency			
+
+
+*/
+
+
+	1st	machine
+	2nd 	assembly
+	3rd	C/C++
+	4th	JPL	
+
+		Computer Programming Language
+			     		|
+				communicate
+		  listen   speak	read	write
+
+
+A class represents business entity
+-------------------------------------------
+minimum unit of transaction with a JPL - a class
+
+
+class First
+{
+	public static void main(String args[])	
+	{
+		System.out.println("Hello world of Java Programming");
+	}
+}
+
+class SavingsAccount
+{
+	void withdraw() { }
+	void deposit() { }
+	..
+	..
+}
+class InsurancePolicy
+{
+}
+class BusTicket
+{
+}
+class MyCart
+{
+}
+class LoanDetails
+{
+}
+
+
+Naming Convention
+-----------------------
+class SavingsAccount
+{
+	void fundTransferToTheSavingsAccount()
+	{
+	}
+}	
+
+SavingsAccount savAccObj = new SavingsAccount();
+savAccObj.fundTransferToTheSavingsAccount();
+
+
+
+
+	ClassName	First	SavingsAccount	DriverManager
+	variableName	rollNumber, salarySlipOfJanuary;
+	methodName	openConnection(), setLookAndFeelOfTheScreen()
+	CONSTANT	SPEED_OF_LIGHT	MAX  MIN  PI 
+	pack1.pack2	java.lang   java.net    java.awt.event 
+			java.util
+
+
+
+
+First.java	--> javac First.java ---> Greet.class <-- main()
+================				|
+					java Greet
+
+class Greet
+{
+	public static void main(String abc[])
+	{
+		System.out.println("Hello world of Java Programming");
+	}
+}
+
+
+	
+
+	Class					Object
+	|					|
+"The Design" of "an Object"		"An instnace" of "The class"
+
+Logical					Physical
+	
+blueprint of a house			actual house(s)
+
+First.java->javac->SavingsAccount.class-> SavingsAccount savObj = new SavingsAccount();
+-------------
+class SavingsAccount
+{
+   int accountNumber;
+   String accountHolder;
+   double accountBalance;
+	
+   void withdraw(double amt) {
+       accountBalance-=amt;
+   }
+   void deposit(double amt) {
+       accountBalance+=amt;
+   }
+}
+-------------		
+			memory allocation
+	name of the class  refname|  constructor call
+		|	    |	  |	|
+	 SavingsAccount savObj = new SavingsAccount();
+
+
+		accountNumber	accountHolder	accountBalance
+		+-----------------------------------------------+
+		|		|		|		|
+		+-----------------------------------------------+
+	 +----->56578
+	 |
+	+--------+			method area
+	| 56578  |			|
+	+--------+			SavingsAccount() { }	
+	savObj				withdraw(double amt) {..} 
+					deposit(double amt){..}
+
+
+	POPS = function <-- data
+
+	OOPS = data <-- functions
+
+
+	Object = data + "related" functions 
+
+			shirt machine
+		-----------------------------------
+	cloth -->					shirts ....
+		-----------------------------------
+		control ... Qty size..
+
+		
+		
+
+visualizations
+	|
+-----------------
+|		|
+synth		creat
+
+innovate a class
+---------------------
+class FlightTicket
+{
+	
+}
+
+
+
+contract of a class = the association of data and functions
+
+
+			
+class Flight
+{
+	int distanceCovered;
+	int fuelCapacity;
+
+	fly() {   isNess
+		distanceCovered;		
+		fuelCapacity
+	}
+
+	showFuelCapacity() {
+		fuelCapacity= 60000;
+	}
+
+}
+
+class BankAccount
+{
+	balance;
+
+	withdraw(float amt) {
+		balance = balance - amt;
+		balance = balance -20;
+		fuelCapacity=202;
+	}
+}
+BankAccount ba = new BankAccount();
+assert...(50000,ba.withdraw(5000),45000);
+logic1
+logic2
+logic3
+
+TKI Model
+
+	x
+A	|
+s	|competetive	|collaborate	|		
+s	|		|		|
+e	|		|		|
+r	|------------compromise---------+	
+	|		|		|
+t	|avoiding	|accomodate	|
+iveness	|		|		|
+	+-------------------------------------y
+	1 2 3 4 5 6 7 .................100
+		cooperativeness---------->
+
+
+
+
+
+
+
+
+
+
+
+
