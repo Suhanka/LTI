@@ -1,12 +1,16 @@
 class BankTest
-{
+{  	//		who
+	//where		when
+	//why   what    wow
+	
 	public static void main(String args[])
 	{
 		System.out.println("starting the bank....");
 
 		//creating object = instantiation process
-		BankAccount bankObj1 = new BankAccount(101,"Janet",50000);
+		BankAccount bankObj1 = new BankAccount(-100,"Sachin",50000);
 		bankObj1.showBankAccount();
+		
 		bankObj1.withdraw(7000);
 		bankObj1.showBankAccount();
 		
@@ -16,7 +20,8 @@ class BankTest
 		
 	}
 }
-// business entity  01
+// business entity  
+
 //vision
 
 class A
@@ -29,10 +34,22 @@ class A
 
 class B
 {
+	int light;
+	
 	B(int x) // this is explicit no-arg ctor -NEVER KNOWN AS DEFAULT 
 	{
-		
+		int planet;
+	    System.out.println("light is "+light);	
+	    //System.out.println("planet is "+planet);
 	}
+	void fun() {
+		light =29292;
+	}
+}
+
+class NegativeAccountNumberException extends Exception
+{
+	
 }
 
 class BankAccount // <-- blueprint of the object 
@@ -44,19 +61,53 @@ class BankAccount // <-- blueprint of the object
 
 	BankAccount() { }
 	
-	BankAccount(int acno, String achn, double accBal) 
-	{
-		boolean validName=false;
-		char alpha = "";
-		System.out.println("==>Creating and setting the BankAccount....");
-		for(int i=0;i<=achn.length();i++)
-		{
-			if(alpha>=65 && alpha<=90)||if(alpha>=97 && alpha<=122)
+							//local variables
+	BankAccount( String achn) {
+		this(0,achn,0); // call the constructor of the same class
+		System.out.println("==>Creating and setting the BankAccount(String)....");
+		//accountHolder = achn;
+		
+		
+	}
+	
+	BankAccount(int accountNumber, String achn, double accBal) {
+		System.out.println("==>Creating and setting the BankAccount(int,String,double)....");
+		if(accountNumber < 0 ) {
+			System.out.println("account number cannot be negative..");
+		}
+		else {
+			this.accountNumber = accountNumber;	
+		}
+		//all local variables must be initialized
+		
+		boolean validName= false; // 
+		char alpha =' ';
+		for (int i=0;i<achn.length();i++)
+		{  //Sac%4in
+			alpha = achn.charAt(i);
+			if( (alpha >=65 && alpha <=90) || ( alpha >=97 && alpha <=122) || (alpha==32) ) // notepad -> alt+68
 			{
-				valid
-		accountNumber = acno;
-		accountHolder = achn;
-		accountBalance = accBal;
+				validName = true;
+			}
+			else {
+				validName = false;
+				break;
+			}
+		}
+		
+			if(validName == true) {
+				accountHolder = achn;		
+			}
+			else {
+				System.out.println("Invalid account holder name ");
+			}
+		
+		if(accBal < 0) {
+			System.out.println("Account opening balance cannot be negative...");
+		}
+		else {
+			accountBalance = accBal;
+		}
 	}
 	
 	/*void setBankAccount(int acno, String achn, double accBal) {
